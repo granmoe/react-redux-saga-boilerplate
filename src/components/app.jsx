@@ -3,14 +3,14 @@ import { connect } from 'react-redux'
 
 import { incrementRequested } from 'ducks'
 
-class Clock extends React.Component {
+class App extends React.Component {
   render () {
-    const { counter, incrementRequested } = this.props
+    const { counter, requestIncrement } = this.props
 
     return (
       <div>
         { counter }
-        <button onClick={ incrementRequested }>increment async</button>
+        <button onClick={ requestIncrement }>increment async</button>
       </div>
     )
   }
@@ -23,4 +23,4 @@ export default connect(state => {
   }
 }, ({
   incrementRequested
-}))(Clock)
+}))(App)

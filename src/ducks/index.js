@@ -17,4 +17,4 @@ export default function reducer (currentState = initialState, action) {
 export const INCREMENT_REQUESTED = 'increment-requested'
 export const INCREMENT = 'increment'
 
-export const incrementRequested = () => ({ type: INCREMENT_REQUESTED })
+export const requestIncrement = () => ({ type: INCREMENT_REQUESTED })
