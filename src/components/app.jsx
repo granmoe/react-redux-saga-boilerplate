@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { incrementRequested } from 'ducks'
+import { requestIncrement } from 'ducks'
 
 class App extends React.Component {
   render () {
@@ -22,5 +22,5 @@ export default connect(state => {
     counter
   }
 }, ({
-  incrementRequested
+  requestIncrement
 }))(App)

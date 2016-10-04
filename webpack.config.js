@@ -1,3 +1,5 @@
+const autoprefixer = require('autoprefixer')
+
 module.exports = {
   devtool: 'eval-source-map',
   entry: './src/main.jsx',
@@ -17,7 +19,13 @@ module.exports = {
         test: /\.jsx?/,
         exclude: /node_modules/,
         loader: 'babel'
+      }, {
+        test: /\.less$/,
+        loader: 'style!css!less'
       }
     ]
+  },
+  postcss: function () {
+    return [ autoprefixer ]
   }
 }
