@@ -1,4 +1,4 @@
-module.exports = { // eslint-disable-line
+module.exports = {
   devtool: 'eval-source-map',
   entry: './src/main.jsx',
   output: {
