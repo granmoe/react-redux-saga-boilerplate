@@ -1,0 +1,47 @@
+{
+    "extends": "standard",
+    "parser": "babel-eslint",
+    "plugins": [
+        "react"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "impliedStrict": true,
+        "jsx": true,
+        "experimentalObjectRestSpread": true
+      }
+    },
+    "rules": {
+        "arrow-parens": [0, "as-needed"],
+        "comma-dangle": 0,
+        "no-console": 1,
+        "no-cond-assign": 0,
+        "no-func-assign": 0,
+        "operator-linebreak": 0,
+        "generator-star-spacing": ["error", {"before": false, "after": true}],
+        "yield-star-spacing": ["error", {"before": false, "after": true}],
+        "quote-props": [2, "as-needed", {
+            "unnecessary": false
+        }],
+        "quotes": [2, "single", {
+            "allowTemplateLiterals": true,
+            "avoidEscape": true
+        }],
+        "jsx-quotes": [2, "prefer-double"],
+        "react/jsx-curly-spacing": [1, "always"],
+        "react/jsx-indent": [2, 2],
+        "react/jsx-indent-props": [2, 2],
+        "react/jsx-no-undef": 2,
+        "react/jsx-quotes": 0,
+        "react/jsx-uses-react": 1,
+        "react/jsx-uses-vars": 1,
+        "react/wrap-multilines": 1,
+        "object-curly-spacing": ["error", "always"]
+    },
+    "env": {
+        "browser": true,
+        "es6": true
+    }
+}
