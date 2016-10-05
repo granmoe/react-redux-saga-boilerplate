@@ -13,9 +13,9 @@ class App extends Component {
     const { count, requestIncrement } = this.props
 
     return (
-      <div>
+      <div className="app">
         Count: { count }
-        <button onClick={ requestIncrement } type="button">increment async</button>
+        <button onClick={ requestIncrement } className="app__increment-btn" type="button">increment async</button>
       </div>
     )
   }

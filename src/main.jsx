@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
 import App from 'components/app.jsx'
+import styles from 'components/app.less'
 import initStore from 'store'
 
 const store = initStore()
