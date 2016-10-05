@@ -1,25 +1,29 @@
-import React from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
 import { requestIncrement } from 'ducks'
 
-class App extends React.Component {
+class App extends Component {
+  static propTypes = {
+    count: PropTypes.number.isRequired,
+    requestIncrement: PropTypes.func.isRequired
+  }
+
   render () {
-    const { counter, requestIncrement } = this.props
+    const { count, requestIncrement } = this.props
 
     return (
       <div>
-        { counter }
-        <button onClick={ requestIncrement }>increment async</button>
+        Count: { count }
+        <button onClick={ requestIncrement } type="button">increment async</button>
       </div>
     )
   }
 }
 
 export default connect(state => {
-  const { counter } = state
   return {
-    counter
+    count: state.get('count')
   }
 }, ({
   requestIncrement

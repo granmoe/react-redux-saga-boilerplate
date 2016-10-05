@@ -1,14 +1,14 @@
-export const initialState = {
-  counter: 0
-}
+import Immutable from 'immutable'
+
+const initialState = Immutable.fromJS({
+  count: 0
+})
 
 export default function reducer (currentState = initialState, action) {
   switch (action.type) {
     case INCREMENT:
-      return {
-        ...currentState,
-        counter: currentState.counter + 1
-      }
+      const count = currentState.get('count')
+      return currentState.set('count', count + 1)
     default:
       return currentState
   }

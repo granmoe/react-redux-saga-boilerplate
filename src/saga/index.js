@@ -4,10 +4,10 @@ import { call, put } from 'redux-saga/effects'
 import { INCREMENT_REQUESTED, INCREMENT } from 'ducks'
 
 export default function* rootSaga () {
-  yield takeLatest([INCREMENT_REQUESTED], handleAction)
+  yield takeLatest([INCREMENT_REQUESTED], incrementAsync)
 }
 
-function* handleAction (action) {
+function* incrementAsync (action) {
   yield call(delay, 1000)
   yield put({ type: INCREMENT })
 }
