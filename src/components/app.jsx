@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
 import { requestIncrement } from 'ducks'
+import 'components/app.less'
 
 class App extends Component {
   static propTypes = {
