@@ -1,5 +1,7 @@
 import Immutable from 'immutable'
 
+const INCREMENT = 'increment'
+
 const initialState = Immutable.fromJS({
   count: 0
 })
@@ -14,7 +16,4 @@ export default function reducer (currentState = initialState, action) {
   }
 }
 
-export const INCREMENT_REQUESTED = 'increment-requested'
-export const INCREMENT = 'increment'
-
-export const requestIncrement = () => ({ type: INCREMENT_REQUESTED })
+export const increment = () => ({ type: INCREMENT })
