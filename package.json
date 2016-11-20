@@ -31,6 +31,7 @@
     "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-react": "^5.2.2",
     "eslint-plugin-standard": "^2.0.0",
+    "imagemin-webpack-plugin": "^1.2.1",
     "immutable": "^3.8.1",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
@@ -42,7 +43,7 @@
     "redux-logger": "^2.6.1",
     "redux-saga": "^0.11.0",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.2",
+    "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^1.16.1",
     "whatwg-fetch": "^1.0.0"
   }

@@ -2,8 +2,7 @@ import { applyMiddleware, createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { Iterable } from 'immutable'
 
-import rootReducer from 'ducks'
-import rootSaga from 'saga'
+import rootReducer, { rootSaga } from 'ducks'
 
 export default function () {
   let middlewares = []
