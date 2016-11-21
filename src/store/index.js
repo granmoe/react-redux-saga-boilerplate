@@ -10,7 +10,7 @@ export default function () {
   middlewares.push(sagaMiddleware)
 
   if (process.env.NODE_ENV === `development`) {
-    const createLogger = require(`redux-logger`)
+    const createLogger = require('redux-logger')
     const stateTransformer = state => Iterable.isIterable(state) ? state.toJS() : state
 
     const logger = createLogger({

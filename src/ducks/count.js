@@ -23,7 +23,7 @@ function* incrementAsyncSaga () {
   yield takeLatest([INCREMENT_REQUESTED], incrementAsync)
 }
 
-function* incrementAsync (action) {
+export function* incrementAsync (action) {
   yield call(delay, 1000)
   yield put(increment())
 }

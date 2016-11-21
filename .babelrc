@@ -1,3 +1,25 @@
 {
-  "presets": ["es2015", "react", "stage-2"]
+  "env": {
+    "production": {
+      "presets": [["es2015", { modules: false }], "react", "stage-1"]
+    },
+    "test": {
+      "presets": [["env", {
+        "targets": {
+          "chrome": 54,
+          "firefox": 49
+        }
+      }], "react", "stage-1"],
+      "plugins": ["babel-plugin-transform-es2015-parameters", "babel-plugin-transform-es2015-destructuring"]
+    },
+    "development": {
+      "presets": [["env", {
+        "targets": {
+          "chrome": 54,
+          "firefox": 49
+        }
+      }], "react", "stage-1"],
+      "plugins": ["babel-plugin-transform-es2015-parameters", "babel-plugin-transform-es2015-destructuring"]
+    }
+  }
 }
