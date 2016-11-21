@@ -72,7 +72,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: 'babel-loader'
       }, {
         test: /\.css$/,
         loaders: [
@@ -82,7 +82,7 @@ module.exports = {
         ]
       }, {
         test: /\.less$/,
-        loader: 'css?sourceMap!less?sourceMap'
+        loader: 'css-loader?sourceMap!less-loader?sourceMap'
       }
     ]
   }
