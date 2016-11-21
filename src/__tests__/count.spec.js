@@ -2,7 +2,7 @@
 import { delay } from 'redux-saga'
 import { call, put } from 'redux-saga/effects'
 
-import { increment, incrementAsync } from '../ducks/count'
+import { increment, incrementAsync } from 'ducks/count'
 
 const SEP = '\n      '
 const done = { done: true, value: undefined }
