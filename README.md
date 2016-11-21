@@ -1,1 +1,1 @@
-# React, Redux, Redux Saga, Immutable, Babel, ES7, Webpack boilerplate
+# React, Redux, Redux Saga, Immutable, ES7 boilerplate
