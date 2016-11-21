@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
-import { requestIncrement } from 'ducks'
+import { requestIncrement } from 'ducks/count'
 import 'components/app.less'
 
 class App extends Component {

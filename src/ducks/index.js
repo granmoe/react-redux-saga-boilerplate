@@ -1,40 +1,31 @@
-import Immutable from 'immutable'
-import { delay, takeLatest } from 'redux-saga'
-import { call, put } from 'redux-saga/effects'
+import { combineReducers } from 'redux-immutable'
+import { call, spawn } from 'redux-saga/effects'
+import count, { sagas as counterSagas } from 'ducks/count'
 
-const initialState = Immutable.fromJS({
-  count: 0
-})
-
-export default function reducer (currentState = initialState, action) {
-  switch (action.type) {
-    case INCREMENT:
-      const count = currentState.get('count')
-      return currentState.set('count', count + 1)
-    default:
-      return currentState
-  }
+const reducers = {
+  count
 }
 
-export const increment = () => ({ type: INCREMENT })
-
-/*
-  SAGA CODE
-*/
-export const requestIncrement = () => ({ type: INCREMENT_REQUESTED })
-
-function* incrementAsyncSaga () {
-  yield takeLatest([INCREMENT_REQUESTED], incrementAsync)
-}
-
-function* incrementAsync (action) {
-  yield call(delay, 1000)
-  yield put(increment())
-}
+export default combineReducers(reducers)
 
 export function* rootSaga () {
-  yield call(incrementAsyncSaga)
-}
+  const sagas = [...counterSagas]
 
-const INCREMENT_REQUESTED = 'increment-requested'
-const INCREMENT = 'increment'
+  yield sagas.map(saga =>
+      spawn(function* () {
+        let isSyncError = false
+        while (!isSyncError) {
+          isSyncError = true
+          try {
+            setTimeout(() => { isSyncError = false })
+            yield call(saga)
+          } catch (e) {
+            if (isSyncError) {
+              throw new Error(saga.name + ' was terminated because it threw an exception on startup.')
+            }
+            // handle exceptions here
+          }
+        }
+      })
+    )
+}
