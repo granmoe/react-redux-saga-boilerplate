@@ -12,20 +12,20 @@ export function* rootSaga () {
   const sagas = [...counterSagas]
 
   yield sagas.map(saga =>
-      spawn(function* () {
-        let isSyncError = false
-        while (!isSyncError) {
-          isSyncError = true
-          try {
-            setTimeout(() => { isSyncError = false })
-            yield call(saga)
-          } catch (e) {
-            if (isSyncError) {
-              throw new Error(saga.name + ' was terminated because it threw an exception on startup.')
-            }
-            // handle exceptions here
+    spawn(function* () {
+      let isSyncError = false
+      while (!isSyncError) {
+        isSyncError = true
+        try {
+          setTimeout(() => { isSyncError = false })
+          yield call(saga)
+        } catch (e) {
+          if (isSyncError) {
+            throw new Error(saga.name + ' was terminated because it threw an exception on startup.')
           }
+          // handle exceptions here
         }
-      })
-    )
+      }
+    })
+  )
 }
