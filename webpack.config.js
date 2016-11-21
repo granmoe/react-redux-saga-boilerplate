@@ -54,7 +54,7 @@ if (IS_DEV) {
 }
 
 module.exports = {
-  devtool: 'eval-source-map',
+  devtool: IS_DEV ? 'inline-source-map' : 'eval',
   entry: './src/main.jsx',
   output: {
     filename: 'bundle.js'

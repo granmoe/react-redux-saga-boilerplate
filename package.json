@@ -14,8 +14,31 @@
     "url": "https://github.com/granmoe/react-redux-saga-boilerplate/issues"
   },
   "scripts": {
-    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js -d --define process.env.NODE_ENV='\"development\"' --progress --colors",
-    "build": "webpack -p --define process.env.NODE_ENV='\"production\"' --config webpack.config.js"
+    "start": "better-npm-run start",
+    "build": "better-npm-run build"
+  },
+  "betterScripts": {
+    "start": {
+      "command": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js -d --progress --colors",
+      "env": {
+        "NODE_ENV": "development",
+        "BABEL_ENV": "development"
+      }
+    },
+    "build": {
+      "command": "webpack --optimize-dedupe",
+      "env": {
+        "NODE_ENV": "production",
+        "BABEL_ENV": "production"
+      }
+    },
+    "test": {
+      "command": "TODO",
+      "env": {
+        "NODE_ENV": "test",
+        "BABEL_ENV": "production"
+      }
+    }
   },
   "devDependencies": {
     "autoprefixer": "^6.5.0",
@@ -25,6 +48,7 @@
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-2": "^6.17.0",
+    "better-npm-run": "0.0.13",
     "css-loader": "^0.25.0",
     "eslint": "^3.1.1",
     "eslint-config-standard": "^5.3.5",
