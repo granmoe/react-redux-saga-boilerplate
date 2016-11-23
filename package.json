@@ -37,6 +37,19 @@
   "jest": {
     "moduleDirectories": ["node_modules", "src"]
   },
+  "keywords": [
+    "react",
+    "redux",
+    "redux-saga",
+    "immutable",
+    "webpack",
+    "babel",
+    "es6",
+    "es7",
+    "autoprefixer",
+    "boilerplate",
+    "template"
+  ],
   "devDependencies": {
     "autoprefixer": "^6.5.0",
     "babel-eslint": "^6.1.2",
