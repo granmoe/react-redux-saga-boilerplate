@@ -27,6 +27,7 @@ const plugins = [
 if (IS_DEV) {
   plugins.push(
     new Webpack.HotModuleReplacementPlugin(),
+    new Webpack.NamedModulesPlugin(),
     new DashboardPlugin()
   )
 } else {
