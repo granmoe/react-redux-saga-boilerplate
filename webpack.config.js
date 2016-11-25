@@ -85,5 +85,23 @@ module.exports = {
         loader: 'css-loader?sourceMap!less-loader?sourceMap'
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
+    port: 3000,
+    compress: false,
+    inline: true,
+    hot: true,
+    stats: {
+      assets: true,
+      children: false,
+      chunks: false,
+      hash: false,
+      modules: false,
+      publicPath: false,
+      timings: true,
+      version: false,
+      warnings: true
+    }
   }
 }
