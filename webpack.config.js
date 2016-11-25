@@ -1,6 +1,7 @@
 /* global module, __dirname */
 const Webpack = require('webpack')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
+const DashboardPlugin = require('webpack-dashboard/plugin')
 
 const IS_DEV = process.env.NODE_ENV === 'development'
 
@@ -25,7 +26,8 @@ const plugins = [
 
 if (IS_DEV) {
   plugins.push(
-    new Webpack.HotModuleReplacementPlugin()
+    new Webpack.HotModuleReplacementPlugin(),
+    new DashboardPlugin()
   )
 } else {
   plugins.push(

@@ -20,7 +20,7 @@
   },
   "betterScripts": {
     "start": {
-      "command": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+      "command": "webpack-dashboard -- ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
       "env": {
         "NODE_ENV": "development",
         "BABEL_ENV": "development"
@@ -35,7 +35,10 @@
     }
   },
   "jest": {
-    "moduleDirectories": ["node_modules", "src"]
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ]
   },
   "keywords": [
     "react",
@@ -85,6 +88,7 @@
     "redux-saga": "^0.11.0",
     "style-loader": "^0.13.1",
     "webpack": "^2.1.0-beta.27",
+    "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "^2.1.0-beta.10",
     "whatwg-fetch": "^1.0.0"
   }
