@@ -1,31 +1,30 @@
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
+import { BrowserRouter, Match, Miss, Link } from 'react-router'
 
-import { requestIncrement } from 'ducks/count'
+import Counter from 'components/counter.jsx'
 import 'components/app.less'
 
-class App extends Component {
-  static propTypes = {
-    count: PropTypes.number.isRequired,
-    requestIncrement: PropTypes.func.isRequired
-  }
+const App = () =>
+  <BrowserRouter>
+    <div className="app">
+      <ul>
+        <li><Link to="/">Async Counter</Link></li>
+        <li><Link to="/quick-start">Quick Start</Link></li>
+        <li><Link to="/examples">Examples</Link></li>
+      </ul>
 
-  render () {
-    const { count, requestIncrement } = this.props
+      <hr/>
 
-    return (
-      <div className="app">
-        Count: { count }
-        <button onClick={ requestIncrement } className="app__increment-btn" type="button">increment async</button>
-      </div>
-    )
-  }
-}
+      <Match exactly pattern="/" component={ Counter } />
+      <Match exactly pattern="/counter" component={ Counter } />
+      <Match exactly pattern="/quick-start" component={ QuickStart } />
+      <Match exactly pattern="/examples" component={ Examples } />
+      <Miss component={ Counter }/>
+    </div>
+  </BrowserRouter>
 
-export default connect(state => {
-  return {
-    count: state.get('count')
-  }
-}, ({
-  requestIncrement
-}))(App)
+const QuickStart = () => <p>quick start</p>
+
+const Examples = () => <p>examples</p>
+
+export default App

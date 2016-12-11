@@ -1,12 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 .app {
   margin: 30px;
 
-  &__increment-btn {
-    display: block;
-    margin-top: 15px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px;
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+
+    li {
+      display: inline;
+    }
   }
+}
+
+button {
+  display: block;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
 }
