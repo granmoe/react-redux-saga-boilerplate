@@ -14,9 +14,6 @@ export default function reducer (currentState = initialState, action) {
 
 export const increment = () => ({ type: INCREMENT })
 
-/*
-  SAGA CODE
-*/
 export const requestIncrement = () => ({ type: INCREMENT_REQUESTED })
 
 function* incrementAsyncSaga () {
