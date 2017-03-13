@@ -16,16 +16,16 @@ export const increment = () => ({ type: INCREMENT })
 
 export const requestIncrement = () => ({ type: INCREMENT_REQUESTED })
 
-function* incrementAsyncSaga () {
-  yield takeLatest([INCREMENT_REQUESTED], incrementAsync)
+function* incrementAsyncWatcher () {
+  yield takeLatest([INCREMENT_REQUESTED], incrementAsyncWorker)
 }
 
-export function* incrementAsync (action) {
+export function* incrementAsyncWorker (action) {
   yield call(delay, 1000)
   yield put(increment())
 }
 
-export const sagas = [incrementAsyncSaga]
+export const sagas = [incrementAsyncWatcher]
 
 const INCREMENT_REQUESTED = 'increment-requested'
 const INCREMENT = 'increment'
