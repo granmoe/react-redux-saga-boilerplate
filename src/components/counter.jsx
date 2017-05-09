@@ -22,10 +22,7 @@ class Counter extends Component {
   }
 }
 
-export default connect(state => {
-  return {
-    count: state.get('count')
-  }
-}, ({
-  requestIncrement
-}))(Counter)
+export default connect(
+  state => ({ count: state.get('count') }),
+  { requestIncrement }
+)(Counter)
