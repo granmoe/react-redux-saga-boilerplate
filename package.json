@@ -52,6 +52,7 @@
     "react",
     "redux",
     "redux-saga",
+    "redux-little-router",
     "immutable",
     "webpack",
     "babel",
