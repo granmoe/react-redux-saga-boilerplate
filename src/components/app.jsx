@@ -7,20 +7,20 @@ import 'components/app.less'
 export default () =>
   <div className="app">
     <ul>
-      <li><Link href="/counter">Async Counter</Link></li>
-      <li><Link href="/foo">Foo</Link></li>
-      <li><Link href="/bar">Bar</Link></li>
+      <li><Link href="/react-redux-saga-boilerplate/counter">Async Counter</Link></li>
+      <li><Link href="/react-redux-saga-boilerplate/foo">Foo</Link></li>
+      <li><Link href="/react-redux-saga-boilerplate/bar">Bar</Link></li>
     </ul>
 
     <hr/>
 
-    <Fragment forRoute="/counter">
+    <Fragment forRoute="/react-redux-saga-boilerplate/counter">
       <Counter />
     </Fragment>
-    <Fragment forRoute="/foo">
+    <Fragment forRoute="/react-redux-saga-boilerplate/foo">
       <p>Just a placeholder</p>
     </Fragment>
-    <Fragment forRoute="/bar">
+    <Fragment forRoute="/react-redux-saga-boilerplate/bar">
       <p>Some content could go here</p>
     </Fragment>
   </div>

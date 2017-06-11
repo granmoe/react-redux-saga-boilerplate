@@ -1,5 +1,4 @@
 # TODO
-* Get everything built correctly so GH page works
 * Pull in and use a UI library
 * Make store immutable after redux-little-router is compat w it
 * update linter config

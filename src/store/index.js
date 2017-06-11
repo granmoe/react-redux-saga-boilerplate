@@ -7,11 +7,13 @@ import reducers, { rootSaga } from 'ducks'
 export default function () {
   // any data to attach to the router key of state when we're on this route
   const routes = {
-    '/counter': {
-      test: 'foo'
-    },
-    '/foo': {},
-    '/bar': {},
+    '/react-redux-saga-boilerplate': {
+      '/counter': {
+        test: 'foo'
+      },
+      '/foo': {},
+      '/bar': {},
+    }
   }
 
   const {
