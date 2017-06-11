@@ -15,11 +15,19 @@
   },
   "scripts": {
     "start": "better-npm-run start",
+    "start:dash": "better-npm-run start:dash",
     "build": "better-npm-run build",
     "test": "jest --verbose"
   },
   "betterScripts": {
     "start": {
+      "command": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+      "env": {
+        "NODE_ENV": "development",
+        "BABEL_ENV": "development"
+      }
+    },
+    "start:dash": {
       "command": "webpack-dashboard -- ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
       "env": {
         "NODE_ENV": "development",
@@ -86,6 +94,7 @@
     "react-router": "4.0.0-2",
     "redux": "^3.5.2",
     "redux-immutable": "^3.0.8",
+    "redux-little-router": "^13.1.3",
     "redux-logger": "^2.6.1",
     "redux-saga": "^0.11.0",
     "style-loader": "^0.13.1",

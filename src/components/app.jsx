@@ -1,30 +1,29 @@
 import React from 'react'
-import { BrowserRouter, Match, Miss, Link } from 'react-router'
+import { Fragment, Link } from 'redux-little-router'
 
 import Counter from 'components/counter.jsx'
 import 'components/app.less'
 
-const App = () =>
-  <BrowserRouter>
-    <div className="app">
-      <ul>
-        <li><Link to="/">Async Counter</Link></li>
-        <li><Link to="/quick-start">Quick Start</Link></li>
-        <li><Link to="/examples">Examples</Link></li>
-      </ul>
+export default () =>
+  <div className="app">
+    <ul>
+      <li><Link href="/counter">Async Counter</Link></li>
+      <li><Link href="/quick-start">Quick Start</Link></li>
+      <li><Link href="/examples">Examples</Link></li>
+    </ul>
 
-      <hr/>
+    <hr/>
 
-      <Match exactly pattern="/" component={ Counter } />
-      <Match exactly pattern="/counter" component={ Counter } />
-      <Match exactly pattern="/quick-start" component={ QuickStart } />
-      <Match exactly pattern="/examples" component={ Examples } />
-      <Miss component={ Counter }/>
-    </div>
-  </BrowserRouter>
-
-const QuickStart = () => <p>quick start</p>
-
-const Examples = () => <p>examples</p>
-
-export default App
+    <Fragment forRoute="/counter">
+      <Counter />
+    </Fragment>
+    <Fragment forRoute="/quick-start">
+      <p>Just a placeholder</p>
+    </Fragment>
+    <Fragment forRoute="/examples">
+      <p>Some content could go here</p>
+    </Fragment>
+    <Fragment forRoute="">
+      <p>This should match everything</p>
+    </Fragment>
+  </div>

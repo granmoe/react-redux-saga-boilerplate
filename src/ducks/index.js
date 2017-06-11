@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux-immutable'
 import { call, spawn } from 'redux-saga/effects'
 import count, { sagas as counterSagas } from 'ducks/count'
 
@@ -6,7 +5,7 @@ const reducers = {
   count
 }
 
-export default combineReducers(reducers)
+export default reducers
 
 export function* rootSaga () {
   const sagas = [...counterSagas]

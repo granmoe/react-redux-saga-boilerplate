@@ -23,6 +23,6 @@ class Counter extends Component {
 }
 
 export default connect(
-  state => ({ count: state.get('count') }),
+  state => ({ count: state.count }),
   { requestIncrement }
 )(Counter)
