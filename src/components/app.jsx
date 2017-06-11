@@ -8,8 +8,8 @@ export default () =>
   <div className="app">
     <ul>
       <li><Link href="/counter">Async Counter</Link></li>
-      <li><Link href="/quick-start">Quick Start</Link></li>
-      <li><Link href="/examples">Examples</Link></li>
+      <li><Link href="/foo">Foo</Link></li>
+      <li><Link href="/bar">Bar</Link></li>
     </ul>
 
     <hr/>
@@ -17,13 +17,10 @@ export default () =>
     <Fragment forRoute="/counter">
       <Counter />
     </Fragment>
-    <Fragment forRoute="/quick-start">
+    <Fragment forRoute="/foo">
       <p>Just a placeholder</p>
     </Fragment>
-    <Fragment forRoute="/examples">
+    <Fragment forRoute="/bar">
       <p>Some content could go here</p>
-    </Fragment>
-    <Fragment forRoute="">
-      <p>This should match everything</p>
     </Fragment>
   </div>

@@ -1,7 +1,7 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { routerForBrowser } from 'redux-little-router'
-import Immutable, { Iterable } from 'immutable'
+import { Iterable } from 'immutable'
 import reducers, { rootSaga } from 'ducks'
 
 export default function () {
@@ -9,7 +9,9 @@ export default function () {
   const routes = {
     '/counter': {
       test: 'foo'
-    }
+    },
+    '/foo': {},
+    '/bar': {},
   }
 
   const {
