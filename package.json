@@ -35,7 +35,7 @@
       }
     },
     "build": {
-      "command": "webpack --optimize-dedupe",
+      "command": "webpack",
       "env": {
         "NODE_ENV": "production",
         "BABEL_ENV": "production"
