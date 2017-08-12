@@ -1,8 +1,26 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import styled from 'emotion/react'
 
 import { requestIncrement } from 'ducks/count'
-import 'components/counter.less'
+
+const CounterWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`
+
+const Count = styled.p`
+  margin-left: 15px;
+`
+
+const CounterButton = styled.button`
+  display: block;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+`
 
 class Counter extends Component {
   static propTypes = {
@@ -14,10 +32,10 @@ class Counter extends Component {
     const { count, requestIncrement } = this.props
 
     return (
-      <div className="counter">
-        <button onClick={ requestIncrement } type="button">increment async</button>
-        <p className="counter__count"> Count: { count }</p>
-      </div>
+      <CounterWrapper>
+        <CounterButton onClick={ requestIncrement }>increment async</CounterButton>
+        <Count> Count: { count }</Count>
+      </CounterWrapper>
     )
   }
 }

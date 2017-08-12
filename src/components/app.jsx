@@ -1,16 +1,31 @@
 import React from 'react'
 import { Fragment, Link } from 'redux-little-router'
+import styled from 'emotion/react'
 
 import Counter from 'components/counter.jsx'
-import 'components/app.less'
+
+const App = styled.div`
+  margin: 30px;
+`
+
+const List = styled.List`
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+`
+
+const ListItem = styled.ListItem`
+  display: inline;
+`
 
 export default () =>
-  <div className="app">
-    <ul>
-      <li><Link href="/react-redux-saga-boilerplate/counter">Async Counter</Link></li>
-      <li><Link href="/react-redux-saga-boilerplate/foo">Foo</Link></li>
-      <li><Link href="/react-redux-saga-boilerplate/bar">Bar</Link></li>
-    </ul>
+  <App>
+    <List>
+      <ListItem><Link href="/react-redux-saga-boilerplate/counter">Async Counter</Link></ListItem>
+      <ListItem><Link href="/react-redux-saga-boilerplate/foo">Foo</Link></ListItem>
+      <ListItem><Link href="/react-redux-saga-boilerplate/bar">Bar</Link></ListItem>
+    </List>
 
     <hr/>
 
@@ -23,4 +38,4 @@ export default () =>
     <Fragment forRoute="/react-redux-saga-boilerplate/bar">
       <p>Some content could go here</p>
     </Fragment>
-  </div>
+  </App>

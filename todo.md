@@ -7,3 +7,4 @@
 * Prod optimizations
 ** uglify/minify
 ** webpack chunking
+* add husky and git hooks

@@ -2,7 +2,7 @@
 const Webpack = require('webpack')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const DashboardPlugin = require('webpack-dashboard/plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const path = require('path')
 
 const IS_DEV = process.env.NODE_ENV === 'development'
 
@@ -12,7 +12,6 @@ const plugins = [
       'NODE_ENV': IS_DEV ? JSON.stringify('development') : JSON.stringify('production')
     }
   }),
-  new ExtractTextPlugin('styles.css'),
   new ImageminPlugin({
     disable: true, // change to false to compress images even while webpack is in debug mode
     pngquant: {
@@ -66,7 +65,7 @@ module.exports = {
   },
   resolve: {
     modules: [
-      'src',
+      path.resolve(__dirname, 'src'),
       'node_modules'
     ],
     extensions: ['.json', '.js', '.jsx']
@@ -83,13 +82,8 @@ module.exports = {
         exclude: /node_modules/,
         loaders: [
           'style-loader',
-          'css-loader',
-          'postcss-loader'
+          'css-loader'
         ]
-      }, {
-        test: /\.less$/,
-        exclude: /node_modules/,
-        loader: ExtractTextPlugin.extract('css-loader?sourceMap!less-loader?sourceMap')
       }
     ]
   },
