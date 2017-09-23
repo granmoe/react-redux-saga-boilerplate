@@ -2,7 +2,7 @@
 import { delay } from 'redux-saga'
 import { call, put } from 'redux-saga/effects'
 
-import { increment, incrementAsync } from 'ducks/count'
+import { increment, incrementAsyncWorker } from 'ducks/count'
 
 const SEP = '\n      '
 const done = { done: true, value: undefined }
@@ -14,7 +14,7 @@ describe('incrementAsync', () => {
   ]
 
   it(steps.join(SEP), () => {
-    const saga = incrementAsync()
+    const saga = incrementAsyncWorker()
 
     expect(saga.next().value).toEqual(call(delay, 1000))
     expect(saga.next().value).toEqual(put(increment()))

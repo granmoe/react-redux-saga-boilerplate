@@ -1,6 +1,6 @@
 import React from 'react'
 import { Fragment, Link } from 'redux-little-router'
-import styled from 'emotion/react'
+import styled from 'styled-components'
 
 import Counter from 'components/counter.jsx'
 
@@ -8,14 +8,14 @@ const App = styled.div`
   margin: 30px;
 `
 
-const List = styled.List`
+const List = styled.ul`
   list-style-type: none;
   display: flex;
   justify-content: space-around;
   margin-bottom: 15px;
 `
 
-const ListItem = styled.ListItem`
+const ListItem = styled.li`
   display: inline;
 `
 

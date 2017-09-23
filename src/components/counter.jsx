@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import styled from 'emotion/react'
+import styled from 'styled-components'
 
 import { requestIncrement } from 'ducks/count'
 

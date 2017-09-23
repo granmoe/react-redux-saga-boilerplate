@@ -1,33 +1,38 @@
 {
   "env": {
     "production": {
-      "presets": [["es2015", { "modules": false }], "react", "stage-1"],
-      "plugins": ["emotion/babel"]
+      "presets": [
+        ["env", {
+          "targets": {
+            "browsers": "last 4 versions"
+          }
+        }],
+        "react",
+        "stage-2"
+      ]
     },
     "test": {
       "presets": [
         ["env", {
           "targets": {
-            "chrome": 60
+            "node": "current"
           }
         }],
         "react",
-        "stage-1"
-      ],
-      "plugins": ["emotion/babel", "babel-plugin-transform-es2015-parameters", "babel-plugin-transform-es2015-destructuring"]
+        "stage-2"
+      ]
     },
     "development": {
       "presets": [
         ["env", {
           "targets": {
-            "chrome": 60
+            "browsers": "last 2 versions"
           }
         }],
         "react-hmre",
         "react",
-        "stage-1"
-      ],
-      "plugins": ["emotion/babel", "babel-plugin-transform-es2015-parameters", "babel-plugin-transform-es2015-destructuring"]
+        "stage-2"
+      ]
     }
   }
 }
