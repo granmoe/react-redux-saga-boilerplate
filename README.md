@@ -6,7 +6,6 @@
 * A fairly production-ready webpack config (uglify, minify, image compression, image inlining) (tailor it further based on the needs of your project)
 
 ## Installation
-* Clone
+* clone the repo
 * npm install
-
-## Note: this isn't 100% finished, but it's very close
+* npm start to run dev server
