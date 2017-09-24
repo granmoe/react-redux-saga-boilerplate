@@ -1,4 +1,5 @@
 node_modules
+jest
 npm-debug.log*
 
 dist/**
