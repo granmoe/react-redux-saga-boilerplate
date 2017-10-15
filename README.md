@@ -1,4 +1,4 @@
-# React, Styled-Components, Redux-Little-Router, Redux, Redux Saga, Immutable, Babel, Webpack HMR boilerplate
+# React, Styled-Components, Redux-Little-Router, Redux, Redux Saga, Babel, Webpack HMR boilerplate
 
 ## Features
 * Webpack Hot Module Reloading (HMR)
