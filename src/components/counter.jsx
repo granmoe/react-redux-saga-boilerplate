@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import { PropTypes } from 'prop-types'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 
@@ -33,14 +34,15 @@ class Counter extends Component {
 
     return (
       <CounterWrapper>
-        <CounterButton onClick={ requestIncrement }>increment async</CounterButton>
+        <CounterButton onClick={ requestIncrement }>
+          increment async
+        </CounterButton>
         <Count> Count: { count }</Count>
       </CounterWrapper>
     )
   }
 }
 
-export default connect(
-  state => ({ count: state.count }),
-  { requestIncrement }
-)(Counter)
+export default connect(state => ({ count: state.count }), { requestIncrement })(
+  Counter
+)

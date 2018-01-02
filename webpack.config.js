@@ -9,7 +9,7 @@ const IS_DEV = process.env.NODE_ENV === 'development'
 const plugins = [
   new Webpack.DefinePlugin({
     'process.env': {
-      'NODE_ENV': IS_DEV ? JSON.stringify('development') : JSON.stringify('production')
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV)
     }
   }),
   new ImageminPlugin({
@@ -21,7 +21,17 @@ const plugins = [
       optimizationLevel: 1
     },
     svgo: {},
-    plugins: [] // add imagemin-mozjpeg plugin once https://github.com/sindresorhus/execa/issues/61 is available...and prob switch to image-webpack-loader
+    plugins: [
+      new Webpack.DllReferencePlugin({
+        context: process.cwd(),
+        manifest: require(path.join(
+          __dirname,
+          'src',
+          'public',
+          'vendor-manifest.json'
+        ))
+      })
+    ] // add imagemin-mozjpeg plugin once https://github.com/sindresorhus/execa/issues/61 is available...and prob switch to image-webpack-loader
   })
 ]
 
@@ -48,26 +58,24 @@ if (IS_DEV) {
         dead_code: true,
         evaluate: true,
         if_return: true,
-        join_vars: true,
+        join_vars: true
       },
       output: {
         comments: false
-      },
+      }
     })
   )
 }
 
 module.exports = {
-  devtool: IS_DEV ? 'inline-source-map' : 'eval',
+  devtool: IS_DEV ? 'cheap-module-source-map' : 'eval',
   entry: './src/main.jsx',
   output: {
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    path: path.join(__dirname, 'src', 'public')
   },
   resolve: {
-    modules: [
-      path.resolve(__dirname, 'src'),
-      'node_modules'
-    ],
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     extensions: ['.json', '.js', '.jsx']
   },
   plugins,
@@ -77,13 +85,11 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
-      }, {
+      },
+      {
         test: /\.css$/,
         exclude: /node_modules/,
-        loaders: [
-          'style-loader',
-          'css-loader'
-        ]
+        loaders: ['style-loader', 'css-loader']
       }
     ]
   },
@@ -91,8 +97,10 @@ module.exports = {
     historyApiFallback: true,
     port: 3000,
     compress: false,
+    contentBase: path.join(__dirname, 'src', 'public'),
     inline: true,
     hot: true,
+    open: false,
     stats: {
       assets: true,
       children: false,
