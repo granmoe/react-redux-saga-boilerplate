@@ -14,7 +14,7 @@
     "url": "https://github.com/granmoe/react-redux-saga-boilerplate/issues"
   },
   "scripts": {
-    "start": "better-npm-run start",
+    "start": "build:dll && better-npm-run start",
     "start:dash": "better-npm-run start:dash",
     "build": "better-npm-run build",
     "build:dll": "webpack --config dll.webpack.config.js",

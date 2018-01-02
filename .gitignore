@@ -1,8 +1,14 @@
+# Node stuff
 node_modules
 jest
 npm-debug.log*
 
+# Build stuff
 dist/**
+src/public/*.js 
+src/public/*.json
 
+# Miscellaneous
+.DS_Store
 .#*
 *.org
