@@ -23,21 +23,21 @@
   },
   "betterScripts": {
     "start": {
-      "command": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.js",
+      "command": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
       "env": {
         "NODE_ENV": "development",
         "BABEL_ENV": "development"
       }
     },
     "start:dash": {
-      "command": "webpack-dashboard --config webpack.config.js -- ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+      "command": "webpack-dashboard -- ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
       "env": {
         "NODE_ENV": "development",
         "BABEL_ENV": "development"
       }
     },
     "build": {
-      "command": "webpack --config webpack.config.js",
+      "command": "webpack",
       "env": {
         "NODE_ENV": "production",
         "BABEL_ENV": "production"
@@ -63,7 +63,7 @@
     "redux-saga",
     "redux-little-router",
     "webpack",
-    "webpack 2",
+    "webpack 3",
     "babel",
     "es6",
     "es7",
