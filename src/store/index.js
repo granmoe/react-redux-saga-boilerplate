@@ -1,4 +1,5 @@
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
+import { applyMiddleware, combineReducers, createStore } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
 import createSagaMiddleware from 'redux-saga'
 import { routerForBrowser } from 'redux-little-router'
 import reducers, { rootSaga } from 'ducks'
@@ -21,13 +22,7 @@ export default function () {
     enhancer
   } = routerForBrowser({ routes })
   const sagaMiddleware = createSagaMiddleware()
-  let middlewares = [routerMiddleware, sagaMiddleware]
-
-  if (process.env.NODE_ENV === `development`) {
-    const createLogger = require('redux-logger')
-    const logger = createLogger({ collapsed: _ => true })
-    middlewares.push(logger)
-  }
+  const middlewares = [routerMiddleware, sagaMiddleware]
 
   const allReducers = {
     ...reducers,
@@ -36,7 +31,7 @@ export default function () {
 
   const store = createStore(
     combineReducers(allReducers),
-    compose(enhancer, applyMiddleware(...middlewares))
+    composeWithDevTools(enhancer, applyMiddleware(...middlewares))
   )
 
   sagaMiddleware.run(rootSaga)

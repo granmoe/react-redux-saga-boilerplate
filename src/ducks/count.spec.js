@@ -1,17 +1,13 @@
 /* global describe, it, expect */
 import { delay } from 'redux-saga'
 import { call, put } from 'redux-saga/effects'
-
 import { increment, incrementAsyncWorker } from 'ducks/count'
 
 const SEP = '\n      '
 const done = { done: true, value: undefined }
 
 describe('incrementAsync', () => {
-  const steps = [
-    '1) calls delay(1000)',
-    '2) puts increment()'
-  ]
+  const steps = ['1) calls delay(1000)', '2) puts increment()']
 
   it(steps.join(SEP), () => {
     const saga = incrementAsyncWorker()
