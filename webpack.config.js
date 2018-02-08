@@ -12,6 +12,15 @@ const plugins = [
       NODE_ENV: JSON.stringify(process.env.NODE_ENV)
     }
   }),
+  new Webpack.DllReferencePlugin({
+    context: process.cwd(),
+    manifest: require(path.join(
+      __dirname,
+      'src',
+      'public',
+      'vendor-manifest.json'
+    ))
+  }),
   new ImageminPlugin({
     disable: true, // change to false to compress images even while webpack is in debug mode
     pngquant: {
@@ -21,17 +30,7 @@ const plugins = [
       optimizationLevel: 1
     },
     svgo: {},
-    plugins: [
-      new Webpack.DllReferencePlugin({
-        context: process.cwd(),
-        manifest: require(path.join(
-          __dirname,
-          'src',
-          'public',
-          'vendor-manifest.json'
-        ))
-      })
-    ] // add imagemin-mozjpeg plugin once https://github.com/sindresorhus/execa/issues/61 is available...and prob switch to image-webpack-loader
+    plugins: [] // add imagemin-mozjpeg plugin once https://github.com/sindresorhus/execa/issues/61 is available...and prob switch to image-webpack-loader
   })
 ]
 
