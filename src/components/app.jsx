@@ -22,20 +22,20 @@ const ListItem = styled.li`
 export default () =>
   <App>
     <List>
-      <ListItem><Link href="/react-redux-saga-boilerplate/counter">Async Counter</Link></ListItem>
-      <ListItem><Link href="/react-redux-saga-boilerplate/foo">Foo</Link></ListItem>
-      <ListItem><Link href="/react-redux-saga-boilerplate/bar">Bar</Link></ListItem>
+      <ListItem><Link href="/findeMeMore/counter">Async Counter</Link></ListItem>
+      <ListItem><Link href="/findeMeMore/foo">Foo</Link></ListItem>
+      <ListItem><Link href="/findeMeMore/bar">Bar</Link></ListItem>
     </List>
 
     <hr/>
 
-    <Fragment forRoute="/react-redux-saga-boilerplate/counter">
+    <Fragment forRoute="/findeMeMore/counter">
       <Counter />
     </Fragment>
-    <Fragment forRoute="/react-redux-saga-boilerplate/foo">
+    <Fragment forRoute="/findeMeMore/foo">
       <p>Just a placeholder</p>
     </Fragment>
-    <Fragment forRoute="/react-redux-saga-boilerplate/bar">
+    <Fragment forRoute="/findeMeMore/bar">
       <p>Some content could go here</p>
     </Fragment>
   </App>
