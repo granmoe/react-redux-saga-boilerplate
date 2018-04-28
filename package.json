@@ -19,7 +19,8 @@
     "build": "better-npm-run build",
     "build:dll": "webpack --config dll.webpack.config.js",
     "test": "jest --verbose",
-    "test:watch": "NODE_ENV=test jest --verbose --watch"
+    "test:watch": "NODE_ENV=test jest --verbose --watch",
+    "prepush": "npm run test",
   },
   "betterScripts": {
     "start": {
@@ -110,5 +111,8 @@
     "webpack-dashboard": "^1.0.2",
     "webpack-dev-server": "^2.9.7",
     "whatwg-fetch": "^1.0.0"
+  },
+  "dependencies": {
+    "husky": "^0.14.3"
   }
 }
