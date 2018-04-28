@@ -1,19 +1,21 @@
-import React, { Component } from 'react'
-import { PropTypes } from 'prop-types'
-import { connect } from 'react-redux'
-import styled from 'styled-components'
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
+import { connect } from 'react-redux';
+import styled, { ThemeProvider } from 'styled-components';
+import themes from 'components/themes.js';
 
-import { requestIncrement } from 'ducks/count'
+import { requestIncrement } from 'ducks/count';
 
 const CounterWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-`
+  margin: 30px;
+`;
 
 const Count = styled.p`
   margin-left: 15px;
-`
+`;
 
 const CounterButton = styled.button`
   display: block;
@@ -21,7 +23,7 @@ const CounterButton = styled.button`
   border: 1px solid black;
   border-radius: 5px;
   padding: 5px;
-`
+`;
 
 class Counter extends Component {
   static propTypes = {
@@ -30,19 +32,20 @@ class Counter extends Component {
   }
 
   render () {
-    const { count, requestIncrement } = this.props
+    const { count, requestIncrement } = this.props;
 
     return (
       <CounterWrapper>
-        <CounterButton onClick={ requestIncrement }>
-          increment async
-        </CounterButton>
-        <Count> Count: { count }</Count>
+        <ThemeProvider theme = { themes.foo }>
+          <CounterButton onClick={ requestIncrement }>
+            increment async
+          </CounterButton>
+          <Count> Count: { count }</Count>
+        </ThemeProvider>
       </CounterWrapper>
-    )
+    );
   }
 }
-
-export default connect(state => ({ count: state.count }), { requestIncrement })(
-  Counter
-)
+export default connect(
+  state => ({ count: state.count }),
+  { requestIncrement })(Counter);

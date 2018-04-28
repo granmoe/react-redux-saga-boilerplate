@@ -6,4 +6,4 @@ export default styled.ul`
   flex-direction: row;
   justify-content: space-around;
   margin-bottom: 15px;
-`
+`;

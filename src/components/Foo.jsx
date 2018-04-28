@@ -1,8 +1,6 @@
-import React from 'react'
-import styled, { ThemeProvider } from 'styled-components'
-import Button from 'components/Button.jsx';
-import Wrapper from 'components/Wrapper.jsx';
-import HeaderText from 'components/HeaderText.jsx';
+import React from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import { Button, Wrapper, HeaderText, PStyled } from 'components/shared/index.js';
 import themes from 'components/themes.js';
 
 const Foo = styled.div`
@@ -16,7 +14,7 @@ export default () =>
         <HeaderText>I am some header text!</HeaderText>
         <Button primary>Primary</Button>
         <Button>Regular</Button>
-        <HeaderText>I am more header text!</HeaderText>
+        <PStyled>I am styled text!</PStyled>
       </Wrapper>
     </ThemeProvider>
   </Foo>;

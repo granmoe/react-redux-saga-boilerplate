@@ -1,13 +1,13 @@
 const themes = {
   foo: {
-    font: 'Calibri',
+    font: 'Tahoma',
     color: 'red',
     fontSize: '20px',
   },
   bar: {
     font: 'Tahoma',
     color: 'green',
-    fontSize: '45px',
+    fontSize: '20px',
   },
   nav: {
     font: 'Helvetica',
