@@ -7,6 +7,5 @@ const App = styled.div`
 `;
 export default () =>
   <App>
-    <Content />
     <StartPage />
   </App>;
