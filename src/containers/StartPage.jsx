@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 const StartPageWrapper = styled.div`
@@ -48,6 +49,7 @@ const StartPageButton1 = styled.button`
 class StartPage extends Component {
   static propTypes = {
     players: PropTypes.array,
+    savePlayers: PropTypes.func,
   };
   render() {
     const { players } = this.props;
@@ -69,3 +71,6 @@ class StartPage extends Component {
     )
   }
 }
+export default connect(
+  state => ({ players: state.players }),
+  { savePlayers })(StartPage);
