@@ -14,6 +14,14 @@ const StartPageWrapper = styled.div`
   background-color: #987;
   opacity: 0.7;
 `;
+const Input = styled.input`
+  padding: 0.5em;
+  margin: 0.5em;
+  color: palevioletred;
+  background: papayawhip;
+  border: none;
+  border-radius: 3px;
+`;
 const StartPageMainDivH1 = styled.h1`
   text-align: center;
   font-size: 5em;
@@ -39,18 +47,13 @@ const StartPageButton1 = styled.button`
   margin-right: 5px;
   font-size: 1.5em;
   background: ${props => (props.easy ? 'green' : 'white')};
-  background: -webkit-radial-gradient(#00e600, #006800); /* Safari 5.1 to 6.0 */
-  background: -o-radial-gradient(#00e600, #006800); /* For Opera 11.6 to 12.0 */
-  background: -moz-radial-gradient(#00e600, #006800); /* For Firefox 3.6 to 15 */
-  background: radial-gradient(#00e600, #006800); /* Standard syntax (must be last) */
-
 `
 
 class StartPage extends Component {
-  static propTypes = {
-    players: PropTypes.array,
-    savePlayers: PropTypes.func,
-  };
+  // static propTypes = {
+  //   players: PropTypes.array,
+  //   savePlayers: PropTypes.func,
+  // };
   render() {
     const { players } = this.props;
     return (
@@ -62,15 +65,16 @@ class StartPage extends Component {
           Find my matching partner in all the cards!
         </StartPageMainDivH2>
         <StartPageMainDivP>
-          Input box for name goes here.
+          <Input placeholder="name" type="text" />
         </StartPageMainDivP>
         <StartPageButton1 easy>EASY</StartPageButton1>
-        <StartPageButton medium></StartPageButton>
-        <StartPageButton hard></StartPageButton>
+        <StartPageButton1 medium>MEDIUM</StartPageButton1>
+        <StartPageButton1 hard>HARD</StartPageButton1>
       </StartPageWrapper>
     )
   }
 }
-export default connect(
-  state => ({ players: state.players }),
-  { savePlayers })(StartPage);
+export default StartPage;
+// export default connect(
+//   state => ({ players: state.players }),
+//   { savePlayers })(StartPage);
