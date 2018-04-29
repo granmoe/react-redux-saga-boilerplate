@@ -56,6 +56,19 @@ const Button = styled.button`
   font-size: 1.5em;
   background: 'blue';
 `;
+const ButtonAddMe = styled.button.attrs({
+  type: 'submit',
+})`
+  padding: 5px;
+  padding: 1vh;
+  font-size: 5vh;
+  margin: 1vh;
+  border-radius: 10px;
+  background: blue;
+  background: radial-gradient(white, blue);
+  border-style: outset;
+`;
+
 const ButtonEasy = Button.extend`
   background: radial-gradient(#00e600, #006800);
   border: 'green';
@@ -72,18 +85,19 @@ class StartPage extends Component {
   handleCreatePlayer(event) {
     // all of this will move to redux
     event.preventDefault();
-    console.log('this.name.value', this.name.value);
+
     // if (this.props.players.length < 2) {
-    //   const player = {
-    //   name: this.name.value,
-    //   matchedCards: []
-    //   }
-    //   // this.props.addPlayer(player);
-    //   this.playerForm.reset()
-    //   }
+      const player = {
+        name: this.name.value,
+        matchedCards: [],
+      }
+      // this.props.addPlayer(player);
+      this.playerForm.reset();
+      // }
     // else {
-    //   return null
+      // return null
     // }
+    console.log('player', player);
   }
 
   render() {
@@ -102,18 +116,16 @@ class StartPage extends Component {
             ref={(input) => this.playerForm = input}
             className={ players.length === 2 ? 'hidden': 'player-edit' }
             onSubmit={ (e) => this.handleCreatePlayer(e) }>
-            <div className='name-input-container'>
-              <InputWithProps
-                innerRef={(input) => this.name = input}/>
-            </div>
+            <InputWithProps
+              innerRef={(input) => this.name = input}/>
             <div className='add-me-button-container'>
-              <button className='add-me-button' type='Submit'>Add Me</button>
+              <ButtonAddMe className='add-me-button' type='Submit'>Add Me</ButtonAddMe>
             </div>
           </form>
           <br />
         </StartFormDiv>
         <ButtonEasy>EASY</ButtonEasy>
-      </StartPageWrapper>
+    </StartPageWrapper>
     )
   }
 }
