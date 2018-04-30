@@ -1,3 +1,4 @@
+Deployed at: http://boring-leakey-fc2cb2.netlify.com
 # React, Styled-Components, Redux-Little-Router, Redux, Redux Saga, Babel, Webpack HMR boilerplate
 
 ## Features
@@ -10,7 +11,7 @@
 * npm install
 * npm start to run dev server
 
-## Webpack DLL 
+## Webpack DLL
 * this plugin caches vendor dependencies so they're not rebuilt on every hot reload!
 * by default, the cache is **not** updated when you update a dependencies, so the old version will be served until you update the cache.
 * to update the cache, run `npm run build:dll`

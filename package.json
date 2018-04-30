@@ -19,7 +19,8 @@
     "build": "better-npm-run build",
     "build:dll": "webpack --config dll.webpack.config.js",
     "test": "jest --verbose",
-    "test:watch": "NODE_ENV=test jest --verbose --watch"
+    "test:watch": "NODE_ENV=test jest --verbose --watch",
+    "prepush": "npm run test"
   },
   "betterScripts": {
     "start": {
@@ -92,6 +93,7 @@
     "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-react": "^5.2.2",
     "eslint-plugin-standard": "^2.0.0",
+    "husky": "^0.14.3",
     "imagemin-webpack-plugin": "^1.2.1",
     "jest": "^22.0.4",
     "prop-types": "^15.6.0",
@@ -110,5 +112,6 @@
     "webpack-dashboard": "^1.0.2",
     "webpack-dev-server": "^2.9.7",
     "whatwg-fetch": "^1.0.0"
-  }
+  },
+  "dependencies": {}
 }
