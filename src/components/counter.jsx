@@ -36,12 +36,10 @@ class Counter extends Component {
 
     return (
       <CounterWrapper>
-        <ThemeProvider theme = { themes.foo }>
-          <CounterButton onClick={ requestIncrement }>
-            increment async
-          </CounterButton>
-          <Count> Count: { count }</Count>
-        </ThemeProvider>
+        <CounterButton onClick={ requestIncrement }>
+          increment async
+        </CounterButton>
+        <Count> Count: { count }</Count>
       </CounterWrapper>
     );
   }

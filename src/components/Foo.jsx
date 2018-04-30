@@ -11,10 +11,10 @@ export default () =>
   <Foo>
     <ThemeProvider theme={ themes.foo }>
       <Wrapper>
-        <HeaderText>I am some header text!</HeaderText>
-        <Button primary>Primary</Button>
-        <Button>Regular</Button>
-        <PStyled>I am styled text!</PStyled>
+        <HeaderText>I will be help!</HeaderText>
+        <Button primary>How To Play Guide</Button>
+        <Button>Contact</Button>
+        <PStyled>Thanks for playing!</PStyled>
       </Wrapper>
     </ThemeProvider>
   </Foo>;

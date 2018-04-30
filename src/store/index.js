@@ -11,8 +11,7 @@ export default function () {
       '/counter': {
         test: 'foo'
       },
-      '/foo': {},
-      '/bar': {},
+      '/startPage' : {},
     },
   };
 

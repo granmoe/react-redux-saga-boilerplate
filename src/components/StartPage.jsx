@@ -29,6 +29,10 @@ const StartFormDiv = styled.div`
   text-align: center;
   font-size: 3vh;
 `;
+const ButtonDiv = styled.div`
+  text-align: center;
+  font-size: 1.5vh;
+`;
 const InputWithProps = styled.input.attrs({
   type: 'text',
   placeholder: 'Player Name',
@@ -44,18 +48,6 @@ const InputWithProps = styled.input.attrs({
   border-style: inset;
   min-width: 50%;
 `;
-const Button = styled.button`
-  text-align: center;
-  color: black;
-  border-radius: 50px;
-  margin-top: 5px;
-  height: 100px;
-  width: 100px;
-  padding: 0.1em 0.5em;
-  margin-right: 5px;
-  font-size: 1.5em;
-  background: 'blue';
-`;
 const ButtonAddMe = styled.button.attrs({
   type: 'submit',
 })`
@@ -69,9 +61,27 @@ const ButtonAddMe = styled.button.attrs({
   border-style: outset;
 `;
 
+const Button = styled.button`
+  text-align: center;
+  color: black;
+  margin: 25px;
+  border-radius: 50px;
+  height: 100px;
+  width: 100px;
+  font-size: 1.5em;
+`;
+
 const ButtonEasy = Button.extend`
   background: radial-gradient(#00e600, #006800);
   border: 'green';
+`;
+const ButtonMedium = Button.extend`
+  background: radial-gradient(#ff8c00, #cd6600);
+  border: 'orange';
+`;
+const ButtonHard = Button.extend`
+  background: radial-gradient(#ff0000, #8b0000);
+  border: 'red';
 `;
 
 class StartPage extends Component {
@@ -124,8 +134,12 @@ class StartPage extends Component {
           </form>
           <br />
         </StartFormDiv>
-        <ButtonEasy>EASY</ButtonEasy>
-    </StartPageWrapper>
+        <ButtonDiv>
+          <ButtonEasy>easy</ButtonEasy>
+          <ButtonMedium>medium</ButtonMedium>
+          <ButtonHard>hard</ButtonHard>
+        </ButtonDiv>
+      </StartPageWrapper>
     )
   }
 }
